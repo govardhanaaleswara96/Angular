@@ -15,5 +15,5 @@ import { Component } from "@angular/core";
   ]
 })
 export class AppComponent {
-  name = "Govardhan Aaleswara";
+  userName: string = "";
 }

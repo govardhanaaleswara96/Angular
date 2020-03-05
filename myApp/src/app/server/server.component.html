@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 text-center">
+      <h3 class="">{{ "User Name" }} : {{ name }}</h3>
+      <h3 class="">{{ "Email" }} : {{ email }}</h3>
+      <h3 class="">{{ "Phone Number" }} : {{ phoneNumber }}</h3>
+      <h3 class="">{{ "Age" }} : {{ age }}</h3>
+      <div class="text-center">
+        <h3 [innerHTML]="allowButton"></h3>
+        <h3>{{ creationServer }}</h3>
+        <button
+          class="btn btn-success btn-lg"
+          [disabled]="!allowButton"
+          (click)="createServerMethod()"
+        >
+          Add User
+        </button>
+        <!-- <input
+          type="text"
+          class="form-control mt-5"
+          (input)="serverNameMethod($event)"
+        /> -->
+        <h3>{{ serverName }}</h3>
+        <h3>NgModule</h3>
+        <input type="text" class="form-control" [(ngModel)]="serverName" />
+        <p>{{ serverName }}</p>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<button
+  class="btn btn-primary"
+  (click)="createServer()"
+  [disabled]="!allowNewServer"
+>
+  Add User
+</button>
+
+<h3>{{ serverCreationStatus }}</h3>
+<h3>{{ "user name and id :" }} {{ summary() }}</h3>
+<h3>{{ allowNewServer }}</h3>
+<h3 [innerText]="allowNewServer"></h3>
+<input type="text" class="form-control" (input)="onUpdateServer($event)" />
+<p>Two Way Binding</p>
+<input type="text" class="form-control" [(ngModel)]="serverName" />
+<h3 *ngIf="serverCreated; else noServer">
+  server created : name - {{ serverName }}
+</h3>
+<ng-template #noServer>
+  <h3>No Server Was Created !</h3>
+</ng-template>
