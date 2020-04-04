@@ -1,0 +1,6 @@
+.mainsection {
+  width: 100%;
+  height: 100vh;
+  background-image: url("src/assets/Store.jpg");
+  background-size: cover;
+}
