@@ -1,0 +1,90 @@
+<!-- <div flex fxLayout="row">
+  <div fxFlex="30"></div>
+  <div fxFlex="40">
+    <form [formGroup]="signForm" novalidate (ngSubmit)="onSubmit()">
+      <mat-card class="shipping-card">
+        <mat-card-header>
+          <mat-card-title>Sign Up Details</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="row">
+            <div class="col">
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  placeholder="Enter Your Name"
+                  formControlName="name"
+                  type="text"
+                />
+                <mat-error
+                  *ngIf="signForm.controls['name'].hasError('required')"
+                >
+                  Name is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  placeholder="Enter Your Email Id"
+                  formControlName="email"
+                  type="email"
+                />
+                <mat-error
+                  *ngIf="signForm.controls['email'].hasError('required')"
+                >
+                  Email is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  placeholder="Enter Password"
+                  formControlName="password"
+                  type="password"
+                />
+                <mat-error
+                  *ngIf="signForm.controls['pass'].hasError('required')"
+                >
+                  password is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <mat-form-field appearance="outline">
+                <input
+                  matInput
+                  placeholder="Enter Confirm Password"
+                  formControlName="cPassword"
+                  type="password"
+                />
+                <mat-error
+                  *ngIf="signForm.controls['cpass].hasError('required')"
+                >
+                  Confirm Password is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <button mat-raised-button color="primary" type="submit">
+                Submit
+              </button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+  <div fxFlex="30"></div>
+</div> -->

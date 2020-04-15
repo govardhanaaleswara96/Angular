@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5">
+      <app-recipe-list
+        (recipeDetailItem)="getRecipe = $event"
+      ></app-recipe-list>
+    </div>
+
+    <div class="col-md-7">
+      <app-recipe-detail
+        [recipe]="getRecipe"
+        *ngIf="getRecipe; else text"
+      ></app-recipe-detail>
+      <ng-template #text>
+        <h4>please Select Recipe</h4>
+      </ng-template>
+    </div>
+  </div>
+</div>

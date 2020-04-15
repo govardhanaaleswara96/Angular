@@ -1,0 +1,78 @@
+<div class="mt-5">
+  <button (click)="onlyOdd = !onlyOdd" class="btn btn-primary">
+    Show Odd Number
+  </button>
+  <br /><br />
+  <hr />
+  <div *ngIf="onlyOdd">
+    <ul class="list-group" *ngFor="let odd of oddNum">
+      <li
+        [ngStyle]="{
+          backgroundColor: odd % 2 !== 0 ? 'yellow' : 'transparent'
+        }"
+        [ngClass]="{ odd: odd % 2 !== 0 }"
+        class="list-group-item"
+      >
+        {{ odd }}
+      </li>
+    </ul>
+  </div>
+  <!-- <div *ngIf="!onlyOdd">
+    <ul class="list-group" *ngFor="let even of evenNum">
+      <li
+        [ngStyle]="{
+          backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'
+        }"
+        [ngClass]="{ odd: even % 2 !== 0 }"
+        class="list-group-item"
+      >
+        {{ even }}
+      </li>
+    </ul>
+    <ng-template [ngIf]="!onlyOdd">
+      <ul class="list-group" *ngFor="let even of evenNum">
+        <li
+          [ngStyle]="{
+            backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'
+          }"
+          [ngClass]="{ odd: even % 2 !== 0 }"
+          class="list-group-item"
+        >
+          {{ even }}
+        </li>
+      </ul>
+    </ng-template>
+  </div> -->
+  <div *appUnless="onlyOdd">
+    <ul class="list-group" *ngFor="let even of evenNum">
+      <li
+        [ngStyle]="{
+          backgroundColor: even % 2 !== 0 ? 'yellow' : 'transparent'
+        }"
+        [ngClass]="{ odd: even % 2 !== 0 }"
+        class="list-group-item"
+      >
+        {{ even }}
+      </li>
+    </ul>
+  </div>
+  <div class="mt-5">
+    <p appBasicBackground [ngStyle]="{ color: 'white' }">
+      I am Basic Directive appBasicBackground
+    </p>
+    <p
+      appBetterBackground
+      [highlightColor]="'yellow'"
+      defaultColor="transparent"
+    >
+      I Am Generated Better Directive
+    </p>
+  </div>
+  <div [ngSwitch]="value">
+    <p>ng Switch</p>
+    <p *ngSwitchCase="5">the value is 5</p>
+    <p *ngSwitchCase="10">the value is 10</p>
+    <p *ngSwitchCase="15">the value is 15</p>
+    <p *ngSwitchCase="20">the value is 20</p>
+  </div>
+</div>

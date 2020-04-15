@@ -1,0 +1,15 @@
+<div class="row mt-5">
+  <div class="col-md-12">
+    <button class="btn btn-primary">Add New Recipe</button>
+  </div>
+</div>
+<hr />
+<div class="row">
+  <div class="col-md-12">
+    <app-recipe-item
+      *ngFor="let recipeEl of recipes"
+      [recipe]="recipeEl"
+      (recipeDetail)="getRecipeDetail(recipeEl)"
+    ></app-recipe-item>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <app-forms
+        (serverCreate)="createServer($event)"
+        (blueprintCreate)="createBlueprint($event)"
+      ></app-forms>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <button class="btn btn-info m-3" (click)="onChangeFirst()">
+        OnChangeFirst
+      </button>
+      <button class="btn btn-info m-3" (click)="OnDestroy()">
+        OnDestroy
+      </button>
+      <app-content
+        *ngFor="let element of serverElements"
+        [element]="element"
+        [name]="element.name"
+      >
+        <div
+          class="card-header text-center bg-danger text-white"
+          *ngIf="element.type === 'Server'"
+        >
+          <h4 #paragraph>server : {{ element.name }}</h4>
+        </div>
+        <div
+          class="card-header bg-success text-white text-center"
+          *ngIf="element.type === 'Blueprint'"
+        >
+          <h4>bluePrint : {{ element.name }}</h4>
+        </div>
+        <div class="card-body">
+          <p>{{ element.content }}</p>
+        </div>
+      </app-content>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

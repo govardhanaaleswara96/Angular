@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5">
+      <app-recipe-list
+        (recipeSelected)="selectedRecipe = $event"
+      ></app-recipe-list>
+    </div>
+
+    <div class="col-md-7">
+      <app-recipe-detail
+        [recipe]="selectedRecipe"
+        *ngIf="selectedRecipe; else text"
+      ></app-recipe-detail>
+      <ng-template #text>
+        <h3>Please Selected Recipe</h3>
+      </ng-template>
+    </div>
+  </div>
+</div>

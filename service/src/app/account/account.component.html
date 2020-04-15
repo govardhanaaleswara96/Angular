@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <h4>{{ account.name }}</h4>
+    <hr />
+    <p>The Account Status is {{ account.status }}</p>
+    <button class="btn btn-success m-3" (click)="onSetTo('active')">
+      Set to 'Active'
+    </button>
+    <button class="btn btn-danger m-3" (click)="onSetTo('inactive')">
+      Set to 'Inactive'
+    </button>
+    <button class="btn btn-info m-3" (click)="onSetTo('unknown')">
+      Set to 'Unknown'
+    </button>
+  </div>
+</div>

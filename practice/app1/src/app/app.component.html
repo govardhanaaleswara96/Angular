@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <app-game-control
+    (intervalFired)="onIntervalFired($event)"
+  ></app-game-control>
+  <div class="row mt-3">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <app-odd
+        *ngFor="let oddNumber of oddNumbers"
+        [number]="oddNumber"
+      ></app-odd>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <app-even
+        *ngFor="let evenNumber of evenNumbers"
+        [number]="evenNumber"
+      ></app-even>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>

@@ -1,0 +1,115 @@
+<form #formData="ngForm" (ngSubmit)="saveData(formData)">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>LogIn Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              type="text"
+              placeholder="Enter Your Name"
+              ngModel
+              required
+              name="name"
+              #nameCtrl="ngModel"
+            />
+            <mat-error *ngIf="nameCtrl.errors">
+              <span *ngIf="nameCtrl.errors.required">Name Required</span>
+            </mat-error>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="Enter Your Email"
+              ngModel
+              (ngModelChange)="checkEmail(formData)"
+              required
+              name="email"
+              #emailCtrl="ngModel"
+            />
+            <mat-error>
+              <p class="email">{{ email }}</p>
+            </mat-error>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          <!-- {{ emailCtrl.errors | json }} -->
+          {{ email }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              placeholder="Enter Your Password"
+              ngModel
+              name="password"
+              required
+              minlength="5"
+              #passCtrl="ngModel"
+            />
+            <mat-error *ngIf="passCtrl.errors">
+              <span *ngIf="passCtrl.errors.required">Password Required</span>
+              <span *ngIf="passCtrl.errors.minlength"
+                >minimum Length 5 Required</span
+              >
+            </mat-error>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input
+              matInput
+              placeholder="Enter Your Confirm Password"
+              ngModel
+              name="cPassword"
+              minlength="5"
+              required
+              (ngModelChange)="checkPassword(formData)"
+              #cPassCtrl="ngModel"
+            />
+            <mat-error *ngIf="cPassCtrl.errors">
+              <span *ngIf="cPassCtrl.errors.required"
+                >Confirm Password Required</span
+              >
+              <span *ngIf="cPassCtrl.errors.minlength"
+                >minimum Length 5 Required</span
+              >
+              <span *ngIf="cPassCtrl.errors.notMatched"
+                >Password Not Matched !</span
+              >
+            </mat-error>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          {{ cPassCtrl.errors | json }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="formData.invalid"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>

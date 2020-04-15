@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <app-box bcColor="red" (secret)="handleSecret($event)"></app-box>
+      <app-box bcColor="blue"></app-box>
+      <app-box bcColor="green" (secret)="handleSecret($event)"></app-box>
+      <app-box bcColor="gold"></app-box>
+    </div>
+    <div class="col-md-6">
+      <app-circle></app-circle>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <app-triangle></app-triangle>
+    </div>
+    <div class="col-md-6">
+      <app-rectangle></app-rectangle>
+    </div>
+  </div>
+
+  <!-- <h3>My current hero is {{ name }}</h3>
+  <h3>The sum of 1 + 1 is {{ 10 + 10 }}</h3>
+  <h3 [hidden]="isChanged">Changed</h3> -->
+
+  <!-- <input type="text" class="from-control" [(ngModel)]="server" />
+  <h3>{{ server }}</h3> -->
+  <ol>
+    <li *ngFor="let x of secretValues">
+      {{ x }}
+    </li>
+  </ol>
+</div>
