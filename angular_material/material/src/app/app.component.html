@@ -1,0 +1,60 @@
+<!-- <button mat-button color="primary">Angular Material Button</button>
+<button mat-raised-button color="accent">mat-raised-button</button>
+<button mat-flat-button color="warn">mat-flat-button</button>
+<button mat-stroked-button>mat-stroked-button</button>
+<button mat-icon-button>mat-icon-button</button>
+<button mat-fab>mat-fab</button>
+<button mat-mini-fab color="primary">mat-mini-fab </button>
+
+<div class="mat-display-1">display - 1 </div>
+<div class="mat-display-2">display - 2 </div>
+<div class="mat-display-3">display - 3 </div>
+<div class="mat-display-4">display - 4 </div>
+
+<div class="mat-headline">headline </div>
+<div class="mat-title">title </div>
+<div class="mat-subheading-2">subheading-2 </div>
+<div class="mat-subheading-1">subheading-1</div>
+
+<div class="mat-body-1">body-1 </div>
+<div class="mat-body-2">body-2 </div>
+<div class="mat-caption">mat-caption </div>
+
+<div class="mat-typography">
+  <h3>typography</h3>
+</div> -->
+<div>
+  <mat-button-toggle #toggleBtn checked disableRipple disabled>Toggle</mat-button-toggle>
+  {{toggleBtn.checked}}
+</div>
+<div>
+  <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+    <mat-button-toggle value="angular">Angular</mat-button-toggle>
+    <mat-button-toggle value="node js">Node Js</mat-button-toggle>
+    <mat-button-toggle value="mongo db">Mongo Db</mat-button-toggle>
+    <mat-button-toggle value="express js">Express Js</mat-button-toggle>
+
+  </mat-button-toggle-group>
+  {{toggleGroup.value}}
+</div>
+<mat-icon color="blue">alarm_on
+</mat-icon>
+
+<span matBadge="5" matBadgePosition="below before" matBadgeSize="small">
+  Notification <mat-icon>notification_important</mat-icon>
+</span>
+<span matBadge="5" matBadgePosition="below after" matBadgeColor="primary" matBadgeSize="medium">
+  Notification <mat-icon>notification_important</mat-icon>
+</span>
+<span [matBadge]="notification" matBadgePosition="above before" matBadgeOverlap="false" matBadgeColor="accent"
+  matBadgeSize="large" [matBadgeHidden]="notification === 0">
+  Notification <mat-icon>notification_important</mat-icon>
+</span>
+<span matBadge="5" matBadgePosition="above after" matBadgeColor="warn">
+  Notification <mat-icon>notification_important</mat-icon>
+</span>
+<mat-progress-spinner value="40"></mat-progress-spinner>
+<mat-spinner color="accent" *ngIf="showSpinner"></mat-spinner>
+<button mat-raised-button color="accent" (click)="loadData()">Load Spinner</button>
+<mat-progress-bar value="50" mode="determinate"></mat-progress-bar>
+<mat-progress-bar mode="indeterminate"></mat-progress-bar>

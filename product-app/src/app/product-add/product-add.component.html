@@ -1,0 +1,72 @@
+<div class="container mt-4">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+        <mat-card class="shipping-card">
+            <mat-card-header class="text-center">
+                <mat-card-title>Add Product</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Title</mat-label>
+                            <input formControlName="title" matInput placeholder="Enter Title">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-error *ngIf="productForm.get('title').errors">
+                                <div *ngIf="productForm.get('title').errors.required">
+                                    <p>Title is <strong>required</strong></p>
+                                </div>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Image Url</mat-label>
+                            <input formControlName="imgUrl" matInput placeholder="Placeholder">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-error *ngIf="productForm.get('imgUrl').errors">
+                                <div *ngIf="productForm.get('imgUrl').errors.required">
+                                    <p>Image Url is <strong>required</strong></p>
+                                </div>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>price</mat-label>
+                            <input formControlName="price" matInput placeholder="Placeholder">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-error *ngIf="productForm.get('price').errors">
+                                <div *ngIf="productForm.get('price').errors.required">
+                                    <p>price is <strong>required</strong></p>
+                                </div>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Description</mat-label>
+                            <input formControlName="desc" matInput placeholder="Placeholder">
+                            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            <mat-error *ngIf="productForm.get('desc').errors">
+                                <div *ngIf="productForm.get('desc').errors.required">
+                                    <p>Description is <strong>required</strong></p>
+                                </div>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button [disabled]="productForm.invalid" class="btn btn btn-outline-danger">Submit</button>
+                    </div>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </form>
+</div>

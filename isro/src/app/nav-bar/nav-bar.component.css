@@ -1,0 +1,10 @@
+#navbarSupportedContent ul li a {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 5px 25px 5px 25px;
+}
+
+.navbar-brand img {
+  width: 100px;
+  height: 100px;
+}

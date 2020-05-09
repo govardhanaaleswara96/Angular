@@ -1,0 +1,13 @@
+nav {
+  background-color: teal;
+}
+nav a {
+  color: white;
+}
+.navbar-nav li a {
+  color: white;
+}
+.active {
+  background-color: coral;
+  border-radius: 10px;
+}

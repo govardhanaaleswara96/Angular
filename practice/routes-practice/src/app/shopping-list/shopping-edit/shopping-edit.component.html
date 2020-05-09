@@ -1,0 +1,29 @@
+<form>
+  <div class="row">
+    <div class="col-md-5">
+      <label>Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        [(ngModel)]="newName"
+      />
+    </div>
+    <div class="col-md-2">
+      <label>Amount</label>
+      <input
+        type="number"
+        class="form-control"
+        name="amount"
+        [(ngModel)]="newAmount"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-success m-2" (click)="emitValue()">Add</button>
+      <button class="btn btn-danger m-2">Delete</button>
+      <button class="btn btn-primary m-2">Clear</button>
+    </div>
+  </div>
+</form>

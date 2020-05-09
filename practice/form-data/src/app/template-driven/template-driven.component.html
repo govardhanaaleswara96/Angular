@@ -1,0 +1,60 @@
+<form #userData="ngForm" (ngSubmit)="saveData(userData)">
+    <mat-card class="shipping-card mt-5">
+        <mat-card-header>
+            <mat-card-title>User Template Details</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>User Name</mat-label>
+                    <input required ngModel #userName="ngModel" type="text" name="name" matInput
+                        placeholder="Enter User Name">
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                    <mat-error *ngIf="userName.errors">
+                        <span *ngIf="userName.errors.required">Name is required</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input required ngModel #userEmail="ngModel" type="email" name="email" matInput
+                        placeholder="Enter Email">
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                    <mat-error *ngIf="userEmail.errors">
+                        <span *ngIf="userEmail.errors.required">Email is required</span>
+                        <span *ngIf="userEmail.errors.emailExists">Email Id Exists</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input required minlength="5" ngModel #passCtrl="ngModel" type="password" name="password" matInput
+                        placeholder="Enter User Password">
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                    <mat-error *ngIf="passCtrl.errors">
+                        <span *ngIf="passCtrl.errors.required">Password is required</span>
+                        <span *ngIf="passCtrl.errors.minlength">Password Required Minimum Length 5</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirm password</mat-label>
+                    <input ngModel required minlength="5" #cPassCtrl="ngModel" type="password" name="cPassword" matInput
+                        placeholder="Enter Confirm Password" (ngModelChange)="checkPassword(userData)">
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                    <mat-error *ngIf="cPassCtrl.errors">
+                        <span *ngIf="cPassCtrl.errors.required">Confirm Password is required</span>
+                        <span *ngIf="cPassCtrl.errors.minlength">Password Required Minimum Length 5</span>
+                        <span *ngIf="cPassCtrl.errors.Mismatched">Password Mismatched</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <button mat-raised-button color="accent" [disabled]="userData.invalid">Submit</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</form>

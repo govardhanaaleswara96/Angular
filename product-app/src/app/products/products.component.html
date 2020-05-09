@@ -1,0 +1,26 @@
+<div class="container ">
+    <div class="row mt-4" *ngFor="let x of products">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <img src="{{x.imgUrl}}" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="ont-weight-bold card-title">{{x.title}}</h4>
+                    <!-- Text -->
+                    <div class="d-flex">
+                        <p class="text-center  p-1">
+                            {{x.price}}
+                        </p>
+                        <p class="ext-center p-1">
+                            {{x.desc}}
+                        </p>
+                    </div>
+                    <!-- Button -->
+                    <a routerLink="/product/{{x._id}}" class="details btn btn-outline-danger m-3">Details</a>
+                    <a href="" class="delete btn btn-outline-danger m-3" id="">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

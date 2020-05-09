@@ -1,0 +1,75 @@
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Reactive Form</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Name</mat-label>
+              <input formControlName="name" matInput placeholder="Enter Your Name">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+            <mat-error *ngIf="reactiveForm.get('name').errors">
+              <span *ngIf="reactiveForm.get('name').errors.required">Name Required</span>
+            </mat-error>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Email</mat-label>
+              <input formControlName="email" matInput placeholder="Enter Your Email">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+            {{reactiveForm.get('email').errors | json}}
+            <mat-error *ngIf="reactiveForm.get('email').errors">
+              <span *ngIf="reactiveForm.get('email').errors.required">Email Required</span>
+              <span *ngIf="reactiveForm.get('email').errors.emailExist">Email Already Exists</span>
+            </mat-error>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input formControlName="password" matInput placeholder="Enter Your Password">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+            <mat-error *ngIf="reactiveForm.get('password').errors">
+              <span *ngIf="reactiveForm.get('password').errors.required">Password Required</span>
+              <span *ngIf="reactiveForm.get('password').errors.minlength">Minimum Length 5 Required</span>
+            </mat-error>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input formControlName="cPassword" (change)="checkPassword()" matInput placeholder="Enter Your Password">
+              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+            <mat-error *ngIf="reactiveForm.get('cPassword').errors">
+              <span *ngIf="reactiveForm.get('cPassword').errors.required">Confirm Password Required</span>
+              <span *ngIf="reactiveForm.get('cPassword').errors.minlength">Minimum Length 5 Required</span>
+              <span *ngIf="reactiveForm.get('cPassword').errors.mismatched">Password Mismatched !</span>
+            </mat-error>
+            {{reactiveForm.get('password').errors | json}}
+          </p>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+
+</form>

@@ -1,0 +1,55 @@
+<form [formGroup]="userData" (ngSubmit)="saveData()">
+    <mat-card class="shipping-card mt-5">
+        <mat-card-header>
+            <mat-card-title>User Template Details</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>User Name</mat-label>
+                    <input type="text" formControlName="name" matInput placeholder="Enter User Name">
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                    <mat-error *ngIf="userData.get('name').errors">
+                        <span *ngIf="userData.get('name').errors.required">Name is required</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" type="email" matInput placeholder="Enter Email">
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                    <mat-error *ngIf="userData.get('email').errors">
+                        <span *ngIf="userData.get('email').errors.required">Email is required</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input formControlName="password" type="password" matInput placeholder="Enter User Password">
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                    <mat-error *ngIf="userData.get('password').errors">
+                        <span *ngIf="userData.get('password').errors.required">password is required</span>
+                    </mat-error>
+                </mat-form-field>
+
+            </div>
+            <div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirm password</mat-label>
+                    <input (change)="checkPassword()" formControlName="cPassword" type="password" matInput
+                        placeholder="Enter Confirm Password">
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                    <mat-error *ngIf="userData.get('cPassword').errors">
+                        <span *ngIf="userData.get('cPassword').errors. mismatched">Password Mismatched</span>
+                        <span *ngIf="userData.get('cPassword').errors.required">Confirm Password is required</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <button mat-raised-button color="accent">Submit</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</form>

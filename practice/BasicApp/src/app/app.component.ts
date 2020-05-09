@@ -7,9 +7,11 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   loadFeature: string = "recipe";
+  form: string = "form";
   title = "BasicApp";
   onNavigation(feature: string) {
     //console.log(feature);
     this.loadFeature = feature;
+    this.form = feature;
   }
 }

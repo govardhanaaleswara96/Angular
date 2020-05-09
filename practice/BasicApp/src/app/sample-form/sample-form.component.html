@@ -1,0 +1,12 @@
+<form [formGroup]="loginForm">
+    <div>
+        <label>email</label>
+        <input formControlName="email" type="email">
+        {{loginForm.get('email').errors | json}}
+    </div>
+    <div>
+        <label>Password</label>
+        <input formControlName="password" type="password">
+    </div>
+    <button [disabled]="loginForm.invalid">Submit</button>
+</form>

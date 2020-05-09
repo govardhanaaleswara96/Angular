@@ -10,6 +10,16 @@ import { RecipeDetailComponent } from "./recipes/recipe-detail/recipe-detail.com
 import { RecipeListComponent } from "./recipes/recipe-list/recipe-list.component";
 import { RecipeItemComponent } from "./recipes/recipe-list/recipe-item/recipe-item.component";
 import { DropdownDirective } from "./shared/dropdown.directive";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { SampleFormComponent } from "./sample-form/sample-form.component";
+import { RouterModule } from "@angular/router";
+
+const routes = [
+  {
+    path: "sample",
+    component: SampleFormComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -22,8 +32,14 @@ import { DropdownDirective } from "./shared/dropdown.directive";
     RecipeListComponent,
     RecipeItemComponent,
     DropdownDirective,
+    SampleFormComponent,
   ],
-  imports: [BrowserModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(routes),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

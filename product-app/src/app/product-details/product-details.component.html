@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card" *ngIf="product">
+                <img src="{{product.imgUrl}}" class="card-img-top">
+                <div class="card-body">
+                    <h4 class="ont-weight-bold card-title">{{product.title}}</h4>
+                    <!-- Text -->
+                    <div class="d-flex">
+                        <p class="text-center  p-1">
+                            {{product.price}}
+                        </p>
+                        <p class="ext-center p-1">
+                            {{product.desc}}
+                        </p>
+                    </div>
+                    <!-- Button -->
+                    <a href="" class="details btn btn-outline-danger m-3">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
