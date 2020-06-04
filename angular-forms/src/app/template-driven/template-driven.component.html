@@ -1,0 +1,28 @@
+<div class="container">
+    <form #formData="ngForm" (ngSubmit)="saveData()">
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Name</mat-label>
+                <input matInput placeholder="Placeholder" name="userName" ngModel required>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Email</mat-label>
+                <input matInput placeholder="Placeholder" name="UserEmail" email ngModel required>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter Number</mat-label>
+                <input matInput placeholder="Placeholder" type="number" name="contact" ngModel required>
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+        </div>
+        <div>
+            <button mat-raised-button color="primary" [disabled]="!formData.valid">Submit</button>
+        </div>
+    </form>
+</div>

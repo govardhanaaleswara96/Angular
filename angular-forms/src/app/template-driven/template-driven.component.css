@@ -1,0 +1,10 @@
+matInput.ng-invalid.ng-touched {
+  border: 2px solid crimson;
+}
+form {
+  margin-top: 10%;
+  margin-left: 10%;
+}
+mat-form-field {
+  width: 100%;
+}

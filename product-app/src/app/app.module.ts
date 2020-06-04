@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { ProductsComponent } from './products/products.component';
 import { ProductAdminComponent } from './product-admin/product-admin.component';
 import { ProductAddComponent } from './product-add/product-add.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -26,7 +25,6 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
   declarations: [
     AppComponent,
     NavBarComponent,
-    ProductsComponent,
     ProductAdminComponent,
     ProductAddComponent,
     FormsComponent,

@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-  User.findById("5eafcb9590858f65cb27d8f3")
+  User.findById("5ed742b48b88334aa53c31ab")
     .then((user) => {
       // console.log(user);
       req.user = user;
@@ -28,7 +28,7 @@ app.use("/product", productRouter);
 app.use("/product", shopRouter);
 
 mongoose
-  .connect("mongodb+srv://root:root@cluster0-mum29.mongodb.net/myProducts", {
+  .connect("mongodb://localhost:27017/myProducts", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: true,

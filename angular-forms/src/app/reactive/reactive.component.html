@@ -1,0 +1,64 @@
+<form [formGroup]="userData" (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>User Data</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div formGroupName="mainData">
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Enter Name</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="name">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          <div *ngIf="userData.get('mainData.name').errors && userData.get('mainData.name').touched ">
+
+            <p *ngIf="userData.get('mainData.name').errors['forBittenName']">User Name Is Not Valid
+            </p>
+            <p *ngIf="userData.get('mainData.name').errors['required']">User
+              Name
+              Is Required
+            </p>
+          </div>
+        </div>
+        <div>
+          <mat-form-field appearance="outline">
+            <mat-label>Enter Email</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="email">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+          <div *ngIf="userData.get('mainData.email').errors && userData.get('mainData.email').touched">
+            <p *ngIf="userData.get('mainData.email').errors['EmailId ForBitten']">Email Id ForBitten Required</p>
+            <p *ngIf="userData.get('mainData.email').errors['required']">Please Enter Valid
+              User
+              email</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Enter Number</mat-label>
+          <input matInput placeholder="Placeholder" type="number" formControlName="contact">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <p *ngIf="!userData.get('contact').valid && userData.get('contact').touched">Please Enter Valid User Number</p>
+      </div>
+      <div *ngFor="let gender of genders">
+        <label>
+          <input type="radio" [value]="gender" formControlName="gender"> {{gender}}
+        </label>
+        <p *ngIf="!userData.get('gender').valid && userData.get('gender').touched">Select Your Gender</p>
+      </div>
+      <div formArrayName="hobbies">
+        <h4>Hobbies</h4>
+        <button mat-raised-button color="accent" type="button" (click)="addHobby()">Add Hobby</button>
+        <div class="form-group" *ngFor="let HobbiesController of userData.get('hobbies')['controls']; let i = index">
+          <input type="text" class="form-control" [formControlName]="i">
+        </div>
+      </div>
+      <div>
+        <button mat-raised-button color="primary" [disabled]="">Submit</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</form>
